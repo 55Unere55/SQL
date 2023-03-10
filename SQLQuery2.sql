@@ -11,7 +11,7 @@ actors_lname VARCHAR(50) NOT NULL,
 actors_movies VARCHAR(50) NOT NULL
 );
 INSERT INTO tbl_actors
-(actors_id, actors_fname, actors_lname, actors_movies),
+(actors_fname, actors_lname, actors_movies)
 VALUES
 ('Keira', 'Knightley', 'Pirates of the Caribbean'),
 ('Johnny', 'Depp', 'Pirates of the Caribbean'),
@@ -29,13 +29,13 @@ movies_release INT
 director_name VARCHAR(50) NOT NULL CONSTRAINT fk_director_name = FOREIGN KEY REFERENCES tbl_directors_name(directors_name) ON UPDATE CASCADE ON DELETE CASCADE
 );
 INSERT INTO tbl_Movies
-(movies_id, movies_name, movies_release),
+(movies_name, movies_release)
 VALUES
-('Pirates of the Caribbean', 2003, 'Joachim Ronning'),
-('The Greatest Showman', 2017, 'Michael Gracey'),
-('Water for Elefants', 2011, 'Francis Lawrence'),
-('Sherlock Holmes', 2009, 'Guy Ritchie'),
-('Sister Act', 1992, 'Emile Ardolino')
+('Pirates of the Caribbean', 2003),
+('The Greatest Showman', 2017),
+('Water for Elefants', 2011),
+('Sherlock Holmes', 2009),
+('Sister Act', 1992)
 ;
 SELECT * From tbl_Movies;
 
@@ -44,7 +44,7 @@ director_name VARCHAR(50) NOT NULL,
 director_id INT PRIMARY KEY NOT NULL IDENTITY(30,1)
 );
 INSERT INTO tbl_directors
-(director_name, director_id),
+(director_name)
 VALUES
 ('Joachim Ronning'),
 ('Michael Gracey'),
@@ -55,11 +55,11 @@ VALUES
 SELECT * FROM tbl_directors;
 
 CREATE TABLE tbl_main_Actors (
-main_actors VARCHAR(50) NOT NULL PRIMARY KEY IDENTITY(40,1),
+main_actors VARCHAR(50) NOT NULL PRIMARY KEY IDENTITY (40,1),
 movie_name VARCHAR(50) NOT NULL
 );
 INSERT INTO tbl_main_Actors
-(main_actors, movie_name),
+(main_actors, movie_name)
 VALUES
 ('Keira Knightly', 'Pirates of the Caribbean'),
 ('Johnny Depp', 'Pirates of the Caribbean'),
